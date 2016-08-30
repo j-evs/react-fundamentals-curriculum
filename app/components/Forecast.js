@@ -13,12 +13,24 @@ var Forecast = React.createClass({
     var city = this.props.params.city
     //Fetch data for city using WeatherMap API
     console.log(city);
-    OpenWeatherHelper.getWeatherInfo(city);
+    OpenWeatherHelper.getWeatherInfo(city)
+      .then(function(data) {
+        this.setState({
+          isLoading: false,
+          weatherInfo: data.list
+        })
+      }.bind(this));
   },
   componentWillReceiveProps: function(newProps) {
     var city = newProps.params.city;
     console.log(city);
-    OpenWeatherHelper.getWeatherInfo(city);
+    OpenWeatherHelper.getWeatherInfo(city)
+      .then(function(data) {
+        this.setState({
+          isLoading: false,
+          weatherInfo: data.list
+        })
+      }.bind(this));
   },
   render: function() {
     return (
