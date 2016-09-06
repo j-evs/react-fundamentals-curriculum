@@ -4,7 +4,7 @@
   "description": "Curriculum for React.js Program's React Fundamentals course.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,13 @@
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.24.0",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
+    "react-hot-loader": "^3.0.0-beta.3",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.0"
   }

@@ -12,7 +12,7 @@ function CityInputUI(props) {
           value={props.city}
           placeholder='Moscow'/>
         <span className='input-group-btn'>
-            <button className='btn btn-success' type='submit'>
+            <button className='btn btn-primary' type='submit'>
               Get Weather
             </button>
         </span>

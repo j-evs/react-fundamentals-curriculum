@@ -11,8 +11,8 @@ var Forecast = React.createClass({
   },
   componentDidMount: function() {
     var city = this.props.params.city
+    
     //Fetch data for city using WeatherMap API
-    console.log(city);
     OpenWeatherHelper.getWeatherInfo(city)
       .then(function(data) {
         this.setState({
@@ -23,7 +23,7 @@ var Forecast = React.createClass({
   },
   componentWillReceiveProps: function(newProps) {
     var city = newProps.params.city;
-    console.log(city);
+    console.log(newProps.params)
     OpenWeatherHelper.getWeatherInfo(city)
       .then(function(data) {
         this.setState({
@@ -37,7 +37,8 @@ var Forecast = React.createClass({
       <ForecastUI
         city={this.props.params.city}
         isLoading={this.state.isLoading}
-        weatherInfo={this.state.weatherInfo} />
+        weatherInfo={this.state.weatherInfo}
+        route={this.props.params}/>
     )
   }
 })

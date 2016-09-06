@@ -8,6 +8,7 @@ var IndexRoute = ReactRouter.IndexRoute;
 var App = require('../components/App');
 var Home = require('../containers/Home');
 var Forecast = require('../components/Forecast');
+var DailyWeatherDetailed = require('../components/DailyWeatherDetailed');
 
 var routes = React.createClass({
   render: function() {
@@ -16,6 +17,7 @@ var routes = React.createClass({
         <Route path='/' component={App}>
           <IndexRoute component={Home}/>
           <Route path='/forecast/:city' component={Forecast}/>
+          <Route path='/forecast/:city/:day' component={Forecast}/>
         </Route>
       </Router>
     )
