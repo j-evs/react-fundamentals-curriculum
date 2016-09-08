@@ -24,13 +24,31 @@ var DailyWeather = React.createClass({
     };
     var tempInfo = this.props.info.temp;
     var averageTemp = Math.round((+tempInfo.day + +tempInfo.night + +tempInfo.morn + +tempInfo.eve)/4);
+
+    var onMouseOverLink = 'rgba(192,192,192, 0.25)';
+    var onMouseOverIcon = 'white';
+    var onMouseOutLink = 'transparent';
+    var onMouseOutIcon = 'silver';
     return (
 
-      <Link to={'/forecast/' + this.props.city + '/' + dayOfTheWeek }>
-        <div className='col-md-3' style={styles.flexElement}>
+      <Link
+        style={styles.flexElement}
+        to={'/forecast/' + this.props.city + '/' + dayOfTheWeek }
+        onMouseOver={ function(e) {
+          var link = e.currentTarget;
+          link.style.background = onMouseOverLink;
+          link.firstChild.firstChild.style.color = onMouseOverIcon;
+        } }
+        onMouseOut={ function(e) {
+          var link = e.currentTarget;
+          link.style.background = onMouseOutLink;
+          link.firstChild.firstChild.style.color = onMouseOutIcon;
+        } }
+      >
+        <div>
           <i className={iconClasses[weatherCondition]} style={styles.weatherIcon}></i>
-          <span>{averageTemp}&deg;</span>
-          <p>{date.toLocaleDateString()}</p>
+          <span style={styles.temperature}>{averageTemp}&deg;</span>
+          <p style={styles.date}>{date.toLocaleDateString()}</p>
         </div>
       </Link>
     )

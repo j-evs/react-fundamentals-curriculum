@@ -9,7 +9,7 @@ var Header = React.createClass({
         <div className='col-md-4'>
           <h1 style={styles.headerMotto}>SuperCool Weather App</h1>
         </div>
-        <div className='col-md-2 col-md-offset-6'>
+        <div className='col-md-4 col-md-offset-4'>
           <CityInput/>
         </div>
       </div>

@@ -6,7 +6,7 @@ var Home = React.createClass({
   render: function() {
     return (
       <div style={styles.center} >
-        <h1>Enter a city!</h1>
+        <h1 style={{ color: '#fff' }}>Enter a city!</h1>
         <CityInput/>
       </div>
     )
