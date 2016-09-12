@@ -11,6 +11,7 @@ var DailyWeather = React.createClass({
   },
   render: function() {
     var date = new Date(this.props.info.dt * 1000);
+    var dateFormatted = `${date.getDate() < 10 ? '0' + date.getDate() : date.getDate()}.${date.getMonth() < 9 ? '0'+ (date.getMonth() + 1) : date.getMonth() + 1}.${date.getFullYear()}`;
     var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     var weatherCondition = this.props.info.weather[0].main;
     var dayOfTheWeek = week[date.getDay()];
@@ -45,10 +46,10 @@ var DailyWeather = React.createClass({
           link.firstChild.firstChild.style.color = onMouseOutIcon;
         } }
       >
-        <div>
+        <div style={{margin: '10%'}}>
           <i className={iconClasses[weatherCondition]} style={styles.weatherIcon}></i>
           <span style={styles.temperature}>{averageTemp}&deg;</span>
-          <p style={styles.date}>{date.toLocaleDateString()}</p>
+          <p style={styles.date}>{dateFormatted}</p>
         </div>
       </Link>
     )

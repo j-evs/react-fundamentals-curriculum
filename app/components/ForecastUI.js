@@ -22,7 +22,7 @@ var ForecastUI = React.createClass({
       :  (this.props.route.day === undefined)
         ?
          <div>
-            <h1 className='text-center'>{this.props.city}</h1>
+            <h1 className='text-center' style={styles.cityHeader}>{this.props.city}</h1>
             <div className='container-fluid'>
               <div style={styles.flexContainer}>
                 {this.props.weatherInfo.map(function(item) {
@@ -32,7 +32,7 @@ var ForecastUI = React.createClass({
             </div>
           </div>
         : <div>
-           <h1 className='text-center'>{this.props.city}</h1>
+           <h1 className='text-center' style={styles.cityHeader}>{this.props.city}</h1>
            <div className='container-fluid'>
              <div style={styles.flexContainer}>
                <DailyWeatherDetailed info={this.props.weatherInfo[week.indexOf(this.props.route.day)]} />

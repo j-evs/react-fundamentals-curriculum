@@ -5,6 +5,25 @@ var styles = {
     flexWrap: 'wrap',
     justifyContent: 'center'
   },
+  flexContainerDetailed: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '30%',
+    alignItems: 'center'
+  },
+  weatherInfoDetailed: {
+    color: '#337ab7',
+    fontSize: '4rem'
+  },
+  weatherIconDetailed: {
+    fontSize: '13rem',
+    color: 'silver',
+    margin: '15px'
+  },
+  cityHeader: {
+    color: '#337ab7',
+    fontSize: '6rem'
+  },
   flexElement: {
     hight: '30%',
     textAlign: 'center',
@@ -53,6 +72,7 @@ var styles = {
     height: '100px',
     fontSize: '50px',
     background: 'rgba(0, 0, 0, 0)',
+    color: 'skyblue',
     border: 'none',
     outline: 'none'
   },
