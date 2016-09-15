@@ -6,23 +6,7 @@ var Link = ReactRouter.Link;
 
 
 var DailyWeather = React.createClass({
-  formatProps: function() {
-
-  },
   render: function() {
-    var date = new Date(this.props.info.dt * 1000);
-    var dateFormatted = `${date.getDate() < 10 ? '0' + date.getDate() : date.getDate()}.${date.getMonth() < 9 ? '0'+ (date.getMonth() + 1) : date.getMonth() + 1}.${date.getFullYear()}`;
-    var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    var weatherCondition = this.props.info.weather[0].main;
-    var dayOfTheWeek = week[date.getDay()];
-    var iconClasses = {
-      "Thunderstorm": "wi wi-day-thunderstorm",
-      "Drizzle": "wi wi-day-showers",
-      "Rain": "wi wi-day-rain",
-      "Snow": "wi-day-snow",
-      "Clear": "wi wi-day-sunny",
-      "Clouds": "wi wi-day-cloudy"
-    };
     var tempInfo = this.props.info.temp;
     var averageTemp = Math.round((+tempInfo.day + +tempInfo.night + +tempInfo.morn + +tempInfo.eve)/4);
 
@@ -31,10 +15,9 @@ var DailyWeather = React.createClass({
     var onMouseOutLink = 'transparent';
     var onMouseOutIcon = 'silver';
     return (
-
       <Link
         style={styles.flexElement}
-        to={'/forecast/' + this.props.city + '/' + dayOfTheWeek }
+        to={'/forecast/' + this.props.city + '/' + this.props.info.dayOfTheWeek }
         onMouseOver={ function(e) {
           var link = e.currentTarget;
           link.style.background = onMouseOverLink;
@@ -47,9 +30,9 @@ var DailyWeather = React.createClass({
         } }
       >
         <div style={{margin: '10%'}}>
-          <i className={iconClasses[weatherCondition]} style={styles.weatherIcon}></i>
+          <i className={this.props.iconClasses[this.props.info.weatherCondition]} style={styles.weatherIcon}></i>
           <span style={styles.temperature}>{averageTemp}&deg;</span>
-          <p style={styles.date}>{dateFormatted}</p>
+          <p style={styles.date}>{this.props.info.dateFormatted}</p>
         </div>
       </Link>
     )
