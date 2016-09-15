@@ -9,7 +9,7 @@ React.js Weather App
 SPA React Weather app based on the [Open Weather API](http://openweathermap.org/api). Inspired by [Tyler McGinnis app](http://www.reactjsprogram.com/React-Fundamentals-Project).
 
 ##Resources
-Everything you need to know if you want to build same-ish app from scratch can be found [in this course](http://www.reactjsprogram.com/React-Fundamentals-Project)http://courses.reactjsprogram.com/
+Everything you need to know if you want to build same-ish app from scratch can be found [in this course](http://courses.reactjsprogram.com/)
 
 ##Installation
 `npm install`
